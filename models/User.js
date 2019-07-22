@@ -1,0 +1,27 @@
+const mongoose = require('mongoose');
+const schema = mongoose.Schema;
+
+const UserSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    data: {
+        type: Data,
+        default: Date.now
+    },
+    posts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'post'
+    }]
+})
+
+module.exports = mongoose.model("post", PostSchema);
